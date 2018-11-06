@@ -4,6 +4,11 @@ WORKDIR /opt/app
 COPY src/*.csproj ./
 RUN dotnet restore
 
+WORKDIR /opt/tests
+COPY test ./
+RUN dotnet test
+
+WORKDIR /opt/app
 COPY src/ .
 RUN dotnet publish -c Release -o publish
 
