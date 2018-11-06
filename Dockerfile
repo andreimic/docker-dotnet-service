@@ -6,3 +6,5 @@ RUN dotnet restore
 
 COPY src/ .
 RUN dotnet publish -c Release -o publish
+
+FROM microsoft/dotnet:2.1-aspnetcore-runtime
